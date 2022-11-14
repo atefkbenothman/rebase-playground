@@ -1,25 +1,28 @@
-hello world
+# rebase-playground
 
-adding feature-1 part 1
-adding feature-1 part 2
-adding feature-1 part 3
+learning how to use git rebase and squash
 
-steps:
-1.
-`git fetch upstream`
+**steps**
 
-2.
-`git checkout master`
-`git merge upstream/master`
+1. fetch remote origin changes  
+`git fetch origin/master`
 
-3.
+2. merge origin master branch into local master branch  
+`git merge origin/master`
+
+3. create new branch  
 `git checkout -b feature-1`
 
-4.
-`git commit -m "added part-1"`
-`git commit -m "added part-2"`
-`git commit -m "added part-3"`
+4. make changes and commit  
+`git commit -m "added part 1"`  
+`git commit -m "added part 2"`  
 
-5.
+5. fetch from remote origin again (in case there have been new commits by someone else)  
 `git fetch upstream`
-`# now your local upstream/master branch contains any new commits that are in upstream's master branch.`
+
+6. rebase and squash  
+`git rebase --interactive origin/master`
+
+7. push your branch to remote origin
+
+8. open pull request
